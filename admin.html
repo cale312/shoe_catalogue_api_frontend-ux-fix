@@ -25,11 +25,11 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">Home</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="buy.html"><u>Buy</u> <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="admin.html">Admin</a>
+        <a class="nav-link" href="buy.html">Buy</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="admin.html"><u>Admin</u> <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -41,7 +41,7 @@
 
 <div class="popup jumbotron" id="popup">
   <div class="form-display"></div>
-  <button type="button" class="btn btn-success buy-btn" type="button" name="button" value="">buy</button>
+  <button type="button" class="btn btn-success update-btn" type="button" name="button" value="">update</button>
   <button type="button" class="btn btn-danger cancel-btn" type="button" name="button" value="">cancel</button>
   <br><br>
   <div class="status success alert-success"></div>
@@ -65,7 +65,8 @@
       Size : <strong>US/{{this.size}}</strong><br>
       Color : <strong>{{this.color}}</strong><br>
       Price : <strong>R {{this.price}}</strong><br>
-      <button type="button" class="btn btn-outline-dark purchase-btn" value="{{this._id}}">PURCHASE</button><br>
+      Stock count : <strong>{{this.in_stock}}</strong><br>
+      <button type="button" class="btn btn-outline-dark purchase-btn" value="{{this._id}}">update</button><br>
     </div>
   </div>
   {{/each}}
@@ -73,12 +74,13 @@
 
 <script type="text/x-handlebars" class="purchase-form-template">
   <form class="form-group" action="buy.html" method="post">
-    <h2>Purchase form</h2>
+    <h2>Update form</h2>
     {{#each data}}
     <input type="text" name="" value="{{this.brand}}" class="form-control" disabled>
     <input type="text" name=""value="{{this.color}}" class="form-control" disabled>
     <input type="text" name="" value="US/{{this.size}}" class="form-control" disabled>
     <input type="text" name="" value="R {{this.price}}" class="form-control" disabled>
+    <input type="text" name="" value="Stock : {{this.in_stock}}" class="form-control" disabled>
     <input type="number" name="" placeholder="fill in stock amount" value="" class="form-control amount">
     {{/each}}
   </form>
@@ -95,6 +97,6 @@
 </div>
 
 <script src="js/responsiveslides.min.js"></script>
-<script src="js/purchase.js"></script>
+<script src="js/admin.js"></script>
 
 </html>
