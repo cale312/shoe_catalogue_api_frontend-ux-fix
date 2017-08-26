@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Buy</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+  <link rel="icon" href="img/iconjpeg">
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/handlebars-v4.0.5.js"></script>
+  <script src='css/bootstrap/js/bootstrap.min.js'></script>
+  <script src='css/bootstrap/css/bootstrap.min.css'></script>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.5);">
+  <a class="navbar-brand" href="index.html">SHOE CATALOGUE API</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="buy.html"><u>Buy</u> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Admin</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0 search-btn" type="button">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="popup jumbotron" id="popup">
+  <div class="form-display"></div>
+  <button type="button" class="btn btn-success buy-btn" type="button" name="button" value="">buy</button>
+  <button type="button" class="btn btn-danger cancel-btn" type="button" name="button" value="">cancel</button>
+  <br><br>
+  <div class="status success alert-success"></div>
+  <br>
+</div>
+
+<hr class="invisible">
+
+<body>
+  <div class="container">
+    <div class="data-display row" id="shoes"></div>
+  </div>
+</body>
+
+<hr class="invisible">
+
+<script type="text/x-handlebars" class="table-template">
+  {{#each data}}
+  <div class="shoes">
+    <br>
+    <div class="col-md-10 items">
+      Brand : <strong>{{this.brand}}</strong><br>
+      Size : <strong>US/{{this.size}}</strong><br>
+      Color : <strong>{{this.color}}</strong><br>
+      Price : <strong>R {{this.price}}</strong>
+      <button type="button" class="btn btn-outline-dark purchase-btn" value="{{this._id}}">PURCHASE</button><br>
+    </div>
+  </div>
+  {{/each}}
+</script>
+
+<script type="text/x-handlebars" class="purchase-form-template">
+  <form class="form-group" action="buy.html" method="post">
+    <h2>Purchase form</h2>
+    {{#each data}}
+    <input type="text" name="" value="{{this.brand}}" class="form-control">
+    <input type="text" name=""value="{{this.color}}" class="form-control">
+    <input type="text" name="" value="US/{{this.size}}" class="form-control">
+    <input type="text" name="" value="R{{this.price}}" class="form-control">
+    <input type="number" name="" placeholder="fill in stock amount" value="" class="form-control amount">
+    {{/each}}
+  </form>
+</script>
+
+<div class="container-fluid well">
+  <footer>
+    <div class="text-center footer-links">
+      <a href="https://github.com/cale312/shoe_catalogue_api_frontend/" class="fa fa-github" target="_blank"></a>
+      <br>site By: Zikisa Cale Sogaxa
+    </div>
+  </footer>
+  &copy; 2017 caleArts &trade;
+</div>
+
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/app.js"></script>
+
+</html>
