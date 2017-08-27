@@ -1,5 +1,9 @@
 body {
-  animation: pageFade 2s
+  background: url('../img/ball-line-bg.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: pageFade 2s;
+  font-family: helvetica;
 }
 
 @keyframes pageFade {
@@ -11,9 +15,19 @@ body {
   }
 }
 
+.d-block {
+  height: 499px;
+}
+
+.footer {
+  color: white;
+  background: rgba(0, 0, 0, 1);
+  padding: 5px;
+}
+
 .footer-links a {
   font-size: 40px;
-  color: black;
+  color: white;
 }
 
 .footer-links a:hover {
@@ -23,10 +37,20 @@ body {
 
 .items {
   text-transform: capitalize;
-  font-family: helvetica;
-  box-shadow: 0px 10px 10px;
+  box-shadow: 0px 3px 5px black;
   border-radius: 5px;
   margin: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 45px;
+}
+
+.purchase-btn, .add-btn, .buy-btn, .cancel-btn, .update-btn {
+  cursor: pointer;
+  box-shadow: 0px 2px 5px;
+}
+
+.search-btn {
+  cursor: pointer;
 }
 
 .popup input {
@@ -59,9 +83,12 @@ body {
 }
 
 #popup {
-  box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
 }
 
 .form-style {
-  box-shadow: 0px 2px 5px grey;
+  box-shadow: 0px 2px 5px black;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }

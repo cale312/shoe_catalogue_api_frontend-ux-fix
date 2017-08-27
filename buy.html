@@ -14,7 +14,7 @@
   <script src='css/bootstrap/css/bootstrap.min.css'></script>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.5);">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.9);">
   <a class="navbar-brand" href="index.html">SHOE CATALOGUE API</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0 search-btn" type="button">Search</button>
+      <button class="btn btn-light my-2 my-sm-0 search-btn fa fa-search" type="button"> Search</button>
     </form>
   </div>
 </nav>
@@ -60,12 +60,12 @@
   {{#each data}}
   <div class="shoes">
     <br>
-    <div class="col-md-15 items jumbotron">
+    <div class="col-md-15 items">
       Brand : <strong>{{this.brand}}</strong><br>
       Size : <strong>US/{{this.size}}</strong><br>
       Color : <strong>{{this.color}}</strong><br>
       Price : <strong>R {{this.price}}</strong><br>
-      <button type="button" class="btn btn-outline-dark purchase-btn" value="{{this._id}}">PURCHASE</button><br>
+      <button type="button" class="btn btn-light purchase-btn" value="{{this._id}}">PURCHASE</button><br>
     </div>
   </div>
   {{/each}}
@@ -84,7 +84,7 @@
   </form>
 </script>
 
-<div class="container-fluid well">
+<div class="container-fluid footer">
   <footer>
     <div class="text-center footer-links">
       <a href="https://github.com/cale312/shoe_catalogue_api_frontend/" class="fa fa-github" target="_blank"></a>

@@ -14,7 +14,7 @@
   <script src='css/bootstrap/css/bootstrap.min.css'></script>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.5);">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.8);">
   <a class="navbar-brand" href="index.html">SHOE CATALOGUE API</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0 search-btn" type="button">Search</button>
+      <button class="btn btn-light my-2 my-sm-0 search-btn fa fa-search" type="button"> Search</button>
     </form>
   </div>
 </nav>
@@ -53,7 +53,7 @@
 <body>
   <div class="container-fluid row">
     <div class="col-md-4">
-      <div class="form-group container jumbotron form-style" action="admin.html" method="post">
+      <div class="form-group container form-style" action="admin.html" method="post">
         <h2>Add item</h2>
         <input class="form-control newBrand" type="text" name="" value="" placeholder="brand">
         <input class="form-control newColor" type="text" name="" value="" placeholder="color">
@@ -63,7 +63,7 @@
         <br>
         <button type="" name="" value="" class="btn btn-success fa fa-plus add-btn"> add</button>
       </div>
-      <div class="status"></div>
+      <div class="add-status"></div>
     </div>
     <div class="col-md-8">
       <div class="data-display row" id="shoes"></div>
@@ -77,13 +77,13 @@
   {{#each data}}
   <div class="shoes">
     <br>
-    <div class="col-md-20 items jumbotron">
+    <div class="col-md-20 items">
       Brand : <strong>{{this.brand}}</strong><br>
       Size : <strong>US/{{this.size}}</strong><br>
       Color : <strong>{{this.color}}</strong><br>
       Price : <strong>R {{this.price}}</strong><br>
       Stock count : <strong>{{this.in_stock}}</strong><br>
-      <button type="button" class="btn btn-outline-dark purchase-btn" value="{{this._id}}">update</button><br>
+      <button type="button" class="btn btn-light purchase-btn fa fa-plus" value="{{this._id}}"> update</button><br>
     </div>
   </div>
   {{/each}}
@@ -103,7 +103,7 @@
   </form>
 </script>
 
-<div class="container-fluid well">
+<div class="container-fluid footer">
   <footer>
     <div class="text-center footer-links">
       <a href="https://github.com/cale312/shoe_catalogue_api_frontend/" class="fa fa-github" target="_blank"></a>

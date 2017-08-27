@@ -111,9 +111,9 @@ $('.add-btn').on('click', function() {
       document.querySelector('.newPrice').value = "";
       document.querySelector('.newStock').value = "";
       document.querySelector('.add-btn').disabled = true;
-      statusMsg.innerHTML = '<div class="alert success alert-success">Stock added successfully!</div>';
+      document.querySelector('.add-status').innerHTML = '<div class="text-center alert success alert-success">Stock added successfully!</div>';
     } else {
-      statusMsg.innerHTML = '<div class="alert warning alert-danger">Error adding stock!</div>';
+      document.querySelector('.add-status').innerHTML = '<div class="text-center alert warning alert-danger">Error adding stock!</div>';
     }
   });
 });
