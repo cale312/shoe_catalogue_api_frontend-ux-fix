@@ -15,14 +15,16 @@ body {
   }
 }
 
-.d-block {
-  height: 499px;
-}
-
 .footer {
   color: white;
   background: rgba(0, 0, 0, 1);
   padding: 5px;
+  bottom: 0px;
+  position: fixed;
+}
+
+.top a {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .footer-links a {
@@ -46,7 +48,7 @@ body {
 
 .purchase-btn, .add-btn, .buy-btn, .cancel-btn, .update-btn {
   cursor: pointer;
-  box-shadow: 0px 2px 5px;
+  box-shadow: 0px 2px 5px black;
 }
 
 .search-btn {
@@ -66,7 +68,7 @@ body {
   left: 41%;
   top: 50%;
   margin-left: -150px;
-  margin-top: -200px;
+  margin-top: -250px;
   z-index: 20;
   animation: popup 0.2s;
 }

@@ -14,7 +14,7 @@
   <script src='css/bootstrap/css/bootstrap.min.css'></script>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.9);">
+<nav id="top" class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0, 0, 0, 0.9);">
   <a class="navbar-brand" href="index.html">SHOE CATALOGUE API</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -54,8 +54,6 @@
   </div>
 </body>
 
-<hr class="invisible">
-
 <script type="text/x-handlebars" class="table-template">
   {{#each data}}
   <div class="shoes">
@@ -83,6 +81,13 @@
     {{/each}}
   </form>
 </script>
+
+<div class="text-right top">
+  <a href="#top" class="fa fa-arrow-up jumbotron"> top</a>
+</div>
+
+<!-- <br><br><br><br> -->
+<hr class="invisible">
 
 <div class="container-fluid footer">
   <footer>
