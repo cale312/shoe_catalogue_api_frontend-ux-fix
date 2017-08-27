@@ -6,7 +6,7 @@ const table_instance = Handlebars.compile(table_template);
 function reload() {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/api/shoes'
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes'
   }).done(function(data) {
     table_display.innerHTML = table_instance({
       data: data
@@ -44,7 +44,7 @@ $('#shoes').on('click', function(e) {
   soldShoeId = shoeID;
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/api/shoes/id/' + shoeID
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/' + shoeID
   }).done(function(data) {
     form_display.innerHTML = form_instance({
      data: data
@@ -60,7 +60,7 @@ $('.update-btn').on('click', function() {
   if ($amount.val().length > 0) {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:4000/api/shoes/id/' + soldShoeId + '/amount/' + $amount.val()
+      url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/' + soldShoeId + '/amount/' + $amount.val()
     }).done(function(data) {
       document.querySelector('.status').innerHTML = '<div class="text-center alert success alert-success">Stock updated</div>';
       reload();
@@ -73,4 +73,47 @@ $('.update-btn').on('click', function() {
 $('.cancel-btn').on('click', function() {
  $('.popup').slideUp();
  document.querySelector('.status').innerHTML = "";
+});
+
+document.querySelector('.add-btn').disabled = true;
+var statusMsg = document.querySelector('.status');
+
+$('.newBrand, .newStock, .newSize, .newPrice, .newColor').on('keyup', function() {
+  if ($('.newBrand').val().length > 0 && $('.newSize').val().length > 0 && $('.newColor').val().length > 0 && $('.newPrice').val().length > 0 && $('.newStock').val().length > 0) {
+    document.querySelector('.add-btn').disabled = false;
+  } else {
+    document.querySelector('.add-btn').disabled = true;
+  }
+});
+
+$('.add-btn').on('click', function() {
+  let newStock = {
+    brand: $('.newBrand').val().toLowerCase(),
+    size: $('.newSize').val(),
+    color: $('.newColor').val(),
+    price: $('.newPrice').val(),
+    in_stock: $('.newStock').val()
+  }
+
+  $.ajax({
+    type: 'POST',
+    data: JSON.stringify(newStock),
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/',
+    contentType: "application/json"
+  }).done(function(data) {
+    if (data) {
+      table_display.innerHTML = table_instance({
+        data: data
+      });
+      document.querySelector('.newBrand').value = "";
+      document.querySelector('.newSize').value = "";
+      document.querySelector('.newColor').value = "";
+      document.querySelector('.newPrice').value = "";
+      document.querySelector('.newStock').value = "";
+      document.querySelector('.add-btn').disabled = true;
+      statusMsg.innerHTML = '<div class="alert success alert-success">Stock added successfully!</div>';
+    } else {
+      statusMsg.innerHTML = '<div class="alert warning alert-danger">Error adding stock!</div>';
+    }
+  });
 });

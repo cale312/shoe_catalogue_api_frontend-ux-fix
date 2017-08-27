@@ -60,7 +60,7 @@
   {{#each data}}
   <div class="shoes">
     <br>
-    <div class="col-md-15 items">
+    <div class="col-md-15 items jumbotron">
       Brand : <strong>{{this.brand}}</strong><br>
       Size : <strong>US/{{this.size}}</strong><br>
       Color : <strong>{{this.color}}</strong><br>
@@ -79,7 +79,7 @@
     <input type="text" name=""value="{{this.color}}" class="form-control" disabled>
     <input type="text" name="" value="US/{{this.size}}" class="form-control" disabled>
     <input type="text" name="" value="R {{this.price}}" class="form-control" disabled>
-    <input type="number" name="" placeholder="fill in stock amount" value="" class="form-control amount">
+    <input type="number" name="" placeholder="fill in stock amount" value="" class="form-control amount" autofocus>
     {{/each}}
   </form>
 </script>

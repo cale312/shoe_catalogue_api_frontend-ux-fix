@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Buy</title>
+  <title>Admin</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
@@ -44,13 +44,30 @@
   <button type="button" class="btn btn-success update-btn" type="button" name="button" value="">update</button>
   <button type="button" class="btn btn-danger cancel-btn" type="button" name="button" value="">cancel</button>
   <br><br>
-  <div class="status success alert-success"></div>
+  <div class="status"></div>
   <br>
 </div>
 
+<hr class="invisible">
+
 <body>
-  <div class="container">
-    <div class="data-display row" id="shoes"></div>
+  <div class="container-fluid row">
+    <div class="col-md-4">
+      <div class="form-group container jumbotron form-style" action="admin.html" method="post">
+        <h2>Add item</h2>
+        <input class="form-control newBrand" type="text" name="" value="" placeholder="brand">
+        <input class="form-control newColor" type="text" name="" value="" placeholder="color">
+        <input class="form-control newSize" type="number" name="" value="" placeholder="size">
+        <input class="form-control newPrice" type="number" name="" value="" placeholder="price">
+        <input class="form-control newStock" type="number" name="" value="" placeholder="stock amount">
+        <br>
+        <button type="" name="" value="" class="btn btn-success fa fa-plus add-btn"> add</button>
+      </div>
+      <div class="status"></div>
+    </div>
+    <div class="col-md-8">
+      <div class="data-display row" id="shoes"></div>
+    </div>
   </div>
 </body>
 
@@ -60,7 +77,7 @@
   {{#each data}}
   <div class="shoes">
     <br>
-    <div class="col-md-15 items">
+    <div class="col-md-20 items jumbotron">
       Brand : <strong>{{this.brand}}</strong><br>
       Size : <strong>US/{{this.size}}</strong><br>
       Color : <strong>{{this.color}}</strong><br>
@@ -73,7 +90,7 @@
 </script>
 
 <script type="text/x-handlebars" class="purchase-form-template">
-  <form class="form-group" action="buy.html" method="post">
+  <form class="form-group" action="admin.html" method="post">
     <h2>Update form</h2>
     {{#each data}}
     <input type="text" name="" value="{{this.brand}}" class="form-control" disabled>
@@ -81,7 +98,7 @@
     <input type="text" name="" value="US/{{this.size}}" class="form-control" disabled>
     <input type="text" name="" value="R {{this.price}}" class="form-control" disabled>
     <input type="text" name="" value="Stock : {{this.in_stock}}" class="form-control" disabled>
-    <input type="number" name="" placeholder="fill in stock amount" value="" class="form-control amount">
+    <input type="number" name="" placeholder="fill in stock amount" value="" class="form-control amount" autofocus>
     {{/each}}
   </form>
 </script>

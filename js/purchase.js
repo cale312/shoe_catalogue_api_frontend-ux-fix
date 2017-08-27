@@ -10,7 +10,7 @@ const form_instance = Handlebars.compile(form_template);
 
 $.ajax({
   type: 'GET',
-  url: 'http://localhost:4000/api/shoes'
+  url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes'
 }).done(function(data) {
   console.log('stock loaded successfully!');
 }).done(function(data) {
@@ -43,7 +43,7 @@ $('#shoes').on('click', function(e) {
   soldShoeId = shoeID;
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:4000/api/shoes/id/' + shoeID
+    url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/id/' + shoeID
   }).done(function(data) {
     form_display.innerHTML = form_instance({
      data: data
@@ -59,7 +59,7 @@ $('.buy-btn').on('click', function() {
   if ($amount.val().length > 0) {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:4000/api/shoes/sold/id/' + soldShoeId + '/amount/' + $amount.val()
+      url: 'https://api-shoe-catalogue.herokuapp.com/api/shoes/sold/id/' + soldShoeId + '/amount/' + $amount.val()
     }).done(function(data) {
       document.querySelector('.status').innerHTML = '<div class="text-center alert success alert-success">Purchase is being processed</div>';
     });
