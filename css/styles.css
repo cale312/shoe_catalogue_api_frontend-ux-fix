@@ -94,3 +94,42 @@ body {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
 }
+
+.lg {
+  font-size: 150px;
+  background: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.lg p {
+  font-size: 50px;
+  text-transform: uppercase;
+  animation: zoomIn 5s;
+}
+
+@keyframes zoomIn {
+  from {
+    font-size: 0px;
+  }
+  to {
+    /*display: block;*/
+  }
+}
+
+.lg hr {
+  display: block;
+  width: 600px;
+  border-top: 1px solid #ccc;
+}
+
+.header {
+  animation: fallIn 1s;
+}
+
+ @keyframes fallIn {
+   from {
+     margin-top: -100px
+   }
+ }
